@@ -1,0 +1,6 @@
+{% extends "base" %}
+{% block content %}
+
+    <h1> Table Not Found </h1>
+
+{% endblock content %}

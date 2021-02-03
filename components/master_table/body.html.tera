@@ -1,0 +1,17 @@
+<tbody>
+    {% for row in data %}
+    <tr data-row-id="{{row.id}}">
+
+        {% for field in fields_list %} {% for key, value in row %} {% if key == field.name%} {% if value == true %}
+        <td data-field-name="{{key}}"> <i class="material-icons"> check </i> </td>
+        {% elif value == false %}
+        <td data-field-name="{{key}}"> <i class="material-icons"> clear </i> </td>
+        {% elif value %}
+        <td data-field-name="{{key}}"> {{value}} </td>
+        {% else %}
+        <td data-field-name="{{key}}"> None </td>
+        {% endif %} {% endif%} {% endfor %} {% endfor %}
+    </tr>
+    {% endfor %}
+
+</tbody>

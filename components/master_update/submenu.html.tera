@@ -1,0 +1,9 @@
+<div id="submenu" class="fixed-action-btn">
+  <a class="btn-floating btn-large blue accent-2 waves-effect waves-light">
+    <i class="large material-icons">menu</i>
+  </a>
+  <ul>
+    <li><a class="btn-floating red"><i class="material-icons">clear</i></a></li>
+    <li><a class="btn-floating green"><i class="material-icons">save</i></a></li>
+  </ul>
+</div>

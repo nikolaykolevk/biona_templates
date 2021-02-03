@@ -1,0 +1,14 @@
+.update-headers {
+    font-size: 1.5em;    
+    display: inline;
+}
+
+.update-inputs {
+    display: inline;
+}
+
+div.update-set {
+    /* margin: 5px; */
+    margin-top: 5vw;
+    margin-bottom: 5vw;
+}

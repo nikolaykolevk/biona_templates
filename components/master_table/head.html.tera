@@ -1,0 +1,22 @@
+<thead>
+    <tr>
+
+        
+        {% for field in fields_list %}
+        {% if  field.field_type == "i32" or field.field_type == "i64" or field.field_type == "u32" or field.field_type == "u64"%}
+        {% set type = "number" %}
+        {% elif field.field_type == "bool" %}
+        {% set type = "boolean" %}
+        {% elif field.field_type == "Option < NaiveDate >" or field.field_type == "NaiveDate" %}
+        {% set type = "date" %}
+        {% else %}
+        {% set type = "string" %}
+        {% endif %}
+
+        <th data-from-system-table="{{field.from_system_table}}" data-field-schema="{{field.field_schema}}" data-hidden-field="{{field.hidden}}" data-type="{{type}}" data-display-name="{{field.display_name}}"
+            data-field-name="{{field.name}}" data-filterable="{{field.filterable}}" class="table_header">
+            {{field.display_name}}
+        </th>
+        {% endfor %}
+    </tr>
+</thead>

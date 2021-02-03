@@ -1,0 +1,12 @@
+<nav id="navigation" class="blue accent-2 row">
+    <div>
+        <a data-menu-link data-home-link class="brand-logo left col l-4">{{ meta.app_name }}</a>
+        <ul class="col l-8 right" id="nav-mobile">
+        {% for table in meta.tables %}
+            <li>
+                <a data-menu-link data-target-table="{{table.link}}">{{ table.name }}</a>
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+</nav>

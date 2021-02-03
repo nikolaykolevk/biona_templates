@@ -1,0 +1,21 @@
+<h1 class="center-align blue-text text-accent-2" style="text-transform: uppercase;">{{ table_name }}</h1>
+<div id="data-filters">{% include "components/master_table/filters" %}</div>
+<div class="animate__animated animate__faster" id="data">
+    {% include "components/master_table/table" %}
+</div>
+{% include "components/master_table/add_new_record_btn" %}
+<script>
+    if (!master_table_loaded) {
+        $("<link/>", {
+            rel: "stylesheet",
+            type: "text/css",
+            href: "/src/css/master_table/table.css"
+        }).appendTo("head");
+        $.getScript("/src/js/master_table/table_onload.js");
+        $.getScript("/src/js/master_table/table.js");
+        $.getScript("/src/js/master_table/table_filters.js");
+        $.getScript("/src/js/master_table/pagination.js");
+        $.getScript("/src/js/master_table/common.js");
+        var master_table_loaded = true;
+    }
+</script>

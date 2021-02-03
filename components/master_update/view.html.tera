@@ -1,0 +1,8 @@
+{% extends "base" %}
+{% block content %}
+
+
+{% include "components/master_update/component" %}
+
+
+{% endblock content %}

@@ -1,0 +1,14 @@
+<div class="row center-align animate__animated animate__faster" data-pagination>
+    <ul class="pagination">
+        <li data-move-pagination="true">
+            <a href="#!">
+                <i class="material-icons">chevron_left</i>
+            </a>
+        </li>
+        <li class="page-item" data-move-pagination="false">
+            <a aria-label="Next" class="page-link" href="#">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
+    </ul>
+</div>

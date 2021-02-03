@@ -1,0 +1,10 @@
+{% include "components/master_table/pagination" %}
+<div class="row">
+    <div class="bn-table bn-scollbar z-depth-2">
+        <table class="centered" data-max-page="{{ max_page }}" data-rows-count="{{ data_count }}" data-table="{{ table_name }}" id="table">
+            {% include "components/master_table/head" %}
+            {% include "components/master_table/body" %}
+        </table>
+    </div>
+</div>
+{% include "components/master_table/pagination" %}

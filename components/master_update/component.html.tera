@@ -1,0 +1,19 @@
+{% if found %}
+    {% include "components/master_update/update_data" %}
+    {% include "components/master_update/submenu" %}
+    
+{% else %}
+    {% include "components/master_update/update_not_found" %}
+{% endif %}
+
+<script>
+    if (!master_update_loaded) {
+        $("<link/>", {
+            rel: "stylesheet",
+            type: "text/css",
+            href: "/src/css/master_update/component.css"
+        }).appendTo("head");
+        $.getScript("/src/js/master_update/component.js");
+        var master_update_loaded = true;
+    }
+</script>

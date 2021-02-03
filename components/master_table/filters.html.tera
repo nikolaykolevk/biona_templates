@@ -1,0 +1,76 @@
+<div class="row">
+
+    <ul class="collapsible col offset-s1 s10 z-depth-2 hoverable">
+        <li>
+            <div class="collapsible-header blue-text text-accent-2">
+                <i class="material-icons">tune</i>Options
+            </div>
+            <div class="collapsible-body white">
+                <div class="row valign-wrapper">
+                    <div data-filter-display-count class="input-field col s5 m4">
+                        <select>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                            <option value="200">200</option>
+                        </select>
+                        <label>rows to display</label>
+                    </div>
+                    <div data-filter-hidden-fields class="input-field col s7 m8">
+                        <select multiple>
+                            {% for field in fields_list%}
+                            <option value="{{field.name}}">{{field.display_name}}</option>
+                            {% endfor %}
+                        </select>
+                        <label>Hide Fields</label>
+                    </div>
+                </div>
+
+
+                <div class="col s12 row valign-wrapper">
+                    <div data-sort-field-name class="input-field col s8">
+                        <select>
+                            {% for field in fields_list%}
+                            {% if field.sortable == true%}
+                            <option value="{{field.name}}">{{field.display_name}}</option>
+                            {% endif %}
+                            {% endfor %}
+                        </select>
+                        <label>Sort by</label>
+                    </div>
+                    <div data-sort-order class="input-field col s4">
+                        <select>
+                            <option value="true">Ascending</option>
+                            <option value="false">Descending</option>
+                        </select>
+                        <label>Order</label>
+                    </div>
+
+                </div>
+
+                <div class="col-12 row right-align">
+                    <a id="new-filter-btn" class="waves-effect waves-light btn blue accent-2 hoverable"><i
+                            class="material-icons left">add</i>filter</a>
+                </div>
+
+                <br>
+                <br>
+                <div class="divider"></div>
+                <br>
+                <br>
+
+
+                <div class="col-12 row" style="overflow: visible;" id="table-filters"></div>
+
+                <div class="divider"></div>
+                <br>
+                <br>
+
+                <div class="right-align">
+                    <a data-clear-filters class="waves-effect waves-light btn red darken-2 hoverable">Clear filters</a>
+                    <a data-apply-filters class="waves-effect waves-light btn green darken-3 hoverable">Apply</a>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>

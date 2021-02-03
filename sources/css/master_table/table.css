@@ -1,0 +1,18 @@
+/* Custom scrollbar on biona table */
+.bn-table {
+    overflow: auto;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    margin-left: 2.5%;
+    width: 95%;
+}
+
+#table tbody tr:hover {
+    cursor: pointer;
+    background-color: #bbdefb;
+    transition: 0.5s;
+}
+
+#table-filters div[data-for-type='date'] input:hover{
+    cursor: pointer;
+}

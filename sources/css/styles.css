@@ -1,0 +1,26 @@
+@import '/src/libs/material-design-icons/iconfont/material-icons.css';
+
+.bn-scollbar::-webkit-scrollbar {
+    height: 5px;
+    width: 5px;
+}
+
+.bn-scollbar::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.bn-scollbar::-webkit-scrollbar-thumb {
+    background: #424242;
+}
+
+.bn-scollbar::-webkit-scrollbar-thumb:hover {
+    background: #212121;
+}
+
+#navigation a[data-menu-link][data-home-link]:hover {
+    cursor: pointer;
+}
+
+.material-icons {
+    user-select: none;
+}

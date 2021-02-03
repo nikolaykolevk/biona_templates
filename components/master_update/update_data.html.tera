@@ -1,0 +1,53 @@
+<div class="container update-container">
+    {% for field in fields_list %}
+        {% for key, value in data %}
+            {% if field.name == key %}
+                {% if field.field_type == "i32" or field.field_type == "i64" or field.field_type == "u32" or field.field_type == "u64" %}
+                    {% set type = "number" %}
+                {% elif field.field_type == "bool" %}
+                    {% set type = "boolean" %}
+                {% elif field.field_type == "Option < NaiveDate >" or field.field_type == "NaiveDate" %}
+                    {% set type = "date" %}
+                {% else %}
+                    {% set type = "string" %}
+                {% endif %}
+                {% if type == "number" or type == "string" %}
+                    <div {% if field.hidden == true %} class="hide" {% endif %} style="text-align: center;">
+                        <h4>{{ field.display_name }}</h4>
+                        <div class="input-field">
+                            <input data-type="text" data-update-prop value="{{ value }}" id="{{ field.name }}" type="text" {% if field.updatable == false %} disabled {% endif %}/>
+                        </div>
+                        <br/>
+                    </div>
+                {% elif type == "boolean" %}
+                    <div {% if field.hidden == true %} class="hide" {% endif %} style="text-align: center;">
+                        <h4>{{ field.display_name }}</h4>
+                        <br/>
+                        <label>
+                            <input data-type="boolean" data-update-prop id="{{ field.name }}" type="checkbox"/>
+                            <span>
+                                Yes/No</span>
+                        </label>
+                        <br/> <br/> <hr/>
+                    </div>
+                {% elif type == "date" %}
+                    <div {% if field.hidden == true %} class="hide" {% endif %} style="text-align: center;">
+                        <h4>{{ field.display_name }}</h4>
+                        <br/> <input data-type="date" data-update-prop class="datepicker" {% if field.updatable == false %} disabled {% endif %} type="text" id="{{ field.name }}"/>
+                        <br/> <br/>
+                        <script>
+                            $(document).ready(function () {
+                                instance = $("#{{ field.name }}").datepicker();
+                                instance = M.Datepicker.getInstance($(instance));
+                                date = new Date("{{ value }}");
+                                instance.setDate(date);
+                                instance.doneBtn.click();
+                                
+                            });
+                        </script>
+                    </div>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+</div>

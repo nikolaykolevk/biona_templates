@@ -1,0 +1,12 @@
+{% extends "base" %}
+{% block content %}
+
+
+
+
+{% include "components/master_table/component" %}
+
+
+
+
+{% endblock content %}
